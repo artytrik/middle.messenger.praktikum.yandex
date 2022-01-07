@@ -1,0 +1,54 @@
+.additional-information {
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.additional-information__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.additional-information__item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--grey);
+}
+
+.additional-information__item:last-child {
+  border: none;
+}
+
+.additional-information__label {
+  font-weight: 500;
+}
+
+.additional-information__value {
+  color: var(--dark-grey);
+}
+
+.additional-information__link {
+  text-decoration: none;
+  color: var(--blue);
+}
+
+.additional-information__link--red {
+  color: var(--red);
+}
+
+.additional-information__input {
+  font: inherit;
+  color: var(--dark-grey);
+  border: none;
+  padding: 0;
+  text-align: right;
+}
+
+.additional-information__button {
+  width: 70%;
+  align-self: center;
+}

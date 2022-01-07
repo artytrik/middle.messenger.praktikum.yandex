@@ -1,0 +1,12 @@
+:root {
+  --grey: #EAEAEA;
+  --dark-grey: #999999;
+  --light-grey: #FBFBFB;
+  --hover-grey: #737373;
+  --blue: #3369F3;
+  --dark-blue: #11399E;
+  --red: #FF0000;
+  --black: #1E1E1E;
+
+  --shadow: 0px 0px 6px rgba(0, 0, 0, 0.14);
+}

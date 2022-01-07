@@ -1,0 +1,36 @@
+.profile {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  grid-template-columns: 1fr 20fr;
+}
+
+.profile__aside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 60px;
+
+  background-color: var(--light-grey);
+  border-right: 1px solid var(--grey);
+}
+
+.profile__button {
+  border-radius: 50%;
+  padding: 9.5px 9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile__main-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile__information {
+  width: 40%;
+  min-width: 350px;
+}

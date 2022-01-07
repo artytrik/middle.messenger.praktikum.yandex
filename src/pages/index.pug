@@ -1,0 +1,13 @@
+extends ../layouts/main
+
+block primary
+  section.chat-window
+    h2.visually-hidden Основное окно чата
+    .chat-window__sidebar.sidebar
+      .sidebar__top-block
+        a(href="./viewProfile.pug").sidebar__link Профиль
+          include ../img/arrow.svg
+      .sidebar__bottom-block
+        span.sidebar__plug Заглушка для сайдбара
+    .chat-window__chat.chat
+      span.chat__plug Заглушка для чата

@@ -1,0 +1,19 @@
+extends ../layouts/main
+include ../components/input-block
+
+block primary
+  section.authorize
+    .authorize-block.authorize-block--registration
+      h2.authorize__header Регистрация
+      form.authorize__form
+        .authorize__input-wrapper
+          +input-block('Почта', 'email', 'email')
+          +input-block('Логин', 'text', 'login')
+          +input-block('Имя', 'text', 'first_name')
+          +input-block('Фамилия', 'text', 'last_name')
+          +input-block('Телефон', 'tel', 'phone')
+          +input-block('Пароль', 'password', 'password')
+          +input-block('Пароль (ещё раз)', 'password', 'repeatPassword')
+        .authorize__link-wrapper
+          a.authorize__button.button(href="./index.pug") Регистрация
+          a.authorize__link(href="./login.pug") Войти
