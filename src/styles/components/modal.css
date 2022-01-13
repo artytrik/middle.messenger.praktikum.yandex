@@ -1,0 +1,14 @@
+.modal {
+  box-shadow: var(--shadow);
+  border-radius: 12px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal__header {
+  margin: 1rem 0;
+  text-align: center;
+}

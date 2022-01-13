@@ -1,0 +1,39 @@
+.sidebar {
+  background-color: var(--light-grey);
+  border-right: 1px solid var(--grey);
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar__bottom-block {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar__top-block {
+  padding: 1rem;
+  margin-left: auto;
+}
+
+.sidebar__link {
+  display: flex;
+  gap: 0.25rem;
+  align-items: baseline;
+  color: var(--dark-grey);
+  text-decoration: none;
+}
+
+.sidebar__link:hover {
+  color: var(--hover-grey);
+}
+
+.sidebar__link:hover svg path {
+  stroke: var(--hover-grey);
+}
+
+.sidebar__plug {
+  text-align: center;
+  color: var(--dark-grey);
+}

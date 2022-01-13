@@ -1,0 +1,15 @@
+@import './global.css';
+@import './fonts.css';
+@import './variables.css';
+@import './components/page.css';
+@import './components/button.css';
+@import './components/chat.css';
+@import './components/chat-window.css';
+@import './components/sidebar.css';
+@import './components/modal.css';
+@import './components/authorize.css';
+@import './components/input-block.css';
+@import './components/profile.css';
+@import './components/information.css';
+@import './components/additional-information.css';
+@import './components/error.css';

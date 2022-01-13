@@ -1,0 +1,10 @@
+.chat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat__plug {
+  text-align: right;
+  color: var(--dark-grey);
+}

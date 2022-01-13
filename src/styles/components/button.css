@@ -1,0 +1,15 @@
+.button {
+  padding: 12px;
+  background-color: var(--blue);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  line-height: 1rem;
+}
+
+.button:hover {
+  background-color: var(--dark-blue);
+}

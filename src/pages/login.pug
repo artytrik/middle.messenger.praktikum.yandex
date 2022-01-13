@@ -1,0 +1,14 @@
+extends ../layouts/main
+include ../components/input-block
+
+block primary
+  section.authorize
+    .authorize-block
+      h2.authorize__header Вход
+      form.authorize__form
+        .authorize__input-wrapper
+          +input-block('Логин', 'text', 'login')
+          +input-block('Пароль', 'password', 'password')
+        .authorize__link-wrapper
+          a.authorize__button.button(href="./index.pug") Войти
+          a.authorize__link(href="./registration.pug") Регистрация

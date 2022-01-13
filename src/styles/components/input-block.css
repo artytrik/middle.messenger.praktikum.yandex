@@ -1,0 +1,22 @@
+.input-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-block__label {
+  color: var(--dark-grey);
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.input-block__field {
+  font: inherit;
+  border: none;
+  border-bottom: 1px solid var(--blue);
+  font-size: 1.1rem;
+  padding: 0.25rem 0;
+}
+
+.input-block:hover .input-block__label {
+  color: var(--hover-grey);
+}
