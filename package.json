@@ -9,13 +9,22 @@
   },
   "devDependencies": {
     "@parcel/transformer-pug": "^2.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.9.1",
+    "@typescript-eslint/parser": "^5.9.1",
+    "eslint": "^8.6.0",
+    "eslint-config-htmlacademy": "^5.0.0",
+    "stylelint": "^14.2.0",
+    "stylelint-config-recommended": "^6.0.0",
     "typescript": "^4.5.4"
   },
   "scripts": {
     "dev": "parcel ./src/pages/*.pug",
     "expressServer": "node ./server.js",
     "build": "parcel build ./src/pages/*.pug",
-    "start": "npm run build && npm run expressServer"
+    "start": "npm run build && npm run expressServer",
+    "stylelint": "stylelint \"src/styles/**/*.css\"",
+    "eslint": "eslint --ext .js --ext .ts src/",
+    "test": "npm run stylelint && npm run eslint"
   },
   "author": "Artem Trikashnyi",
   "license": "ISC",
