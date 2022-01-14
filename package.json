@@ -19,9 +19,9 @@
   },
   "scripts": {
     "dev": "parcel ./src/pages/*.pug",
-    "expressServer": "node ./server.js",
+    "express": "node ./src/server.js",
     "build": "parcel build ./src/pages/*.pug",
-    "start": "npm run build && npm run expressServer",
+    "start": "npm run build && npm run express",
     "stylelint": "stylelint \"src/styles/**/*.css\"",
     "eslint": "eslint --ext .js --ext .ts src/",
     "test": "npm run stylelint && npm run eslint"
