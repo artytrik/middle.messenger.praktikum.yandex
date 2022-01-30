@@ -14,11 +14,11 @@ export default class Block {
   };
 
   private eventBus: EventBus;
-  private props: Record<string, unknown>;
+  public props: Record<string, unknown>;
   private _element: HTMLElement;
 
   constructor(tagName = 'div', props = {}) {
-    const eventBus = new EventBus();
+    this.eventBus = new EventBus();
     this.meta  = {
       tagName,
       props
@@ -26,17 +26,15 @@ export default class Block {
 
     this.props = this._makePropsProxy(props);
 
-    this.eventBus = new EventBus;
-
-    this._registerEvents(eventBus);
-    eventBus.emit(Block.EVENTS.INIT);
+    this._registerEvents();
+    this.eventBus.emit(Block.EVENTS.INIT);
   }
 
-  _registerEvents(eventBus: EventBus) {
-    eventBus.on(Block.EVENTS.INIT, this.init.bind(this));
-    eventBus.on(Block.EVENTS.FLOW_CDM, this._componentDidMount.bind(this));
-    eventBus.on(Block.EVENTS.FLOW_RENDER, this._render.bind(this));
-    eventBus.on(Block.EVENTS.FLOW_CDU, this._componentDidUpdate.bind(this));
+  _registerEvents() {
+    this.eventBus.on(Block.EVENTS.INIT, this.init.bind(this));
+    this.eventBus.on(Block.EVENTS.FLOW_CDM, this._componentDidMount.bind(this));
+    this.eventBus.on(Block.EVENTS.FLOW_RENDER, this._render.bind(this));
+    this.eventBus.on(Block.EVENTS.FLOW_CDU, this._componentDidUpdate.bind(this));
   }
 
   _createResources() {
@@ -58,7 +56,7 @@ export default class Block {
     return true;
   }
 
-  _componentDidUpdate(oldProps, newProps) {
+  _componentDidUpdate(oldProps: Record<string, unknown>, newProps: Record<string, unknown>) {
     const response = this.componentDidUpdate(oldProps, newProps);
 
     if (!response) {
@@ -68,11 +66,11 @@ export default class Block {
     this._render();
   }
 
-  componentDidUpdate(oldProps, newProps) {
+  componentDidUpdate(oldProps: Record<string, unknown>, newProps: Record<string, unknown>) {
     return oldProps !== newProps;
   }
 
-  setProps = (nextProps) => {
+  setProps = (nextProps: Record<string, unknown>) => {
     if (!nextProps) {
       return;
     }
@@ -98,20 +96,20 @@ export default class Block {
     return this.element;
   }
 
-  _makePropsProxy(props) {
+  _makePropsProxy<T>(props: Record<string, T>) {
     return new Proxy(props, {
-      get(target, prop) {
+      get(target, prop: string) {
 
         const value = target[prop];
         return typeof value === 'function' ? value.bind(target) : value;
       },
-      set: (target, prop, value) => {
+      set: (target, prop: string, value) => {
 
         target[prop] = value;
         this.eventBus.emit(Block.EVENTS.FLOW_CDU, {...target}, target);
         return true;
       },
-      deleteProperty(target, prop) {
+      deleteProperty(target, prop: string) {
 
         delete target[prop];
         return true;
