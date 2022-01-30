@@ -5,7 +5,10 @@ import serverErrorTmpl from '../../templates/error.tmpl';
 
 export default class ServerError extends Block {
   constructor(props: Record<string, unknown>) {
-    super('div', props);
+    super('section', {
+      ...props,
+      classNames: ['error']
+    });
   }
 
   render() {

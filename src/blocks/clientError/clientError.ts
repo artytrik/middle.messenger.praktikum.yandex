@@ -3,9 +3,12 @@ import renderDOM from '../../utils/render-dom';
 import {compile} from 'pug';
 import serverErrorTmpl from '../../templates/error.tmpl';
 
-export default class ServerError extends Block {
+export default class ClientError extends Block {
   constructor(props: Record<string, unknown>) {
-    super('div', props);
+    super('section', {
+      ...props,
+      classNames: ['error']
+    });
   }
 
   render() {
@@ -13,9 +16,9 @@ export default class ServerError extends Block {
   }
 }
 
-const serverError = new ServerError({
+const clientError = new ClientError({
   errorNumber: 404,
   errorDescription: 'Страница не существует'
 });
 
-renderDOM('.app', serverError);
+renderDOM('.app', clientError);

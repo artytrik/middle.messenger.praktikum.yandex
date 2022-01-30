@@ -1,5 +1,13 @@
 import EventBus from './event-bus';
 
+type Props = {
+  [key: string]: unknown;
+  events?: {
+    [key: string]: (e: Event) => void;
+  }
+  classNames?: string[];
+  href?: string;
+}
 export default class Block {
   static EVENTS = {
     INIT: 'init',
@@ -10,14 +18,14 @@ export default class Block {
 
   private meta: {
     tagName: string,
-    props: object
+    props: Props
   };
 
   private eventBus: EventBus;
-  public props: Record<string, unknown>;
+  public props: Props;
   private _element: HTMLElement;
 
-  constructor(tagName = 'div', props = {}) {
+  constructor(tagName = 'div', props: Props = {}) {
     this.eventBus = new EventBus();
     this.meta  = {
       tagName,
@@ -83,9 +91,17 @@ export default class Block {
   }
 
   _render() {
+    this._removeEvents();
     const block = this.render();
 
+    if (this.props.classNames) {
+      this.props.classNames.forEach((className) => {
+        this._element?.classList.add(className);
+      });
+    }
+
     this._element.innerHTML = block;
+    this._addEvents();
   }
 
   render() {
@@ -96,7 +112,7 @@ export default class Block {
     return this.element;
   }
 
-  _makePropsProxy<T>(props: Record<string, T>) {
+  _makePropsProxy(props: Props) {
     return new Proxy(props, {
       get(target, prop: string) {
 
@@ -114,6 +130,22 @@ export default class Block {
         delete target[prop];
         return true;
       },
+    });
+  }
+
+  _addEvents() {
+    const {events = {}} = this.props;
+
+    Object.keys(events).forEach((eventName) => {
+      this._element.addEventListener(eventName, events[eventName]);
+    });
+  }
+
+  _removeEvents() {
+    const { events = {} } = this.props;
+
+    Object.keys(events).forEach((eventName) => {
+      this._element.removeEventListener(eventName, events[eventName]);
     });
   }
 
