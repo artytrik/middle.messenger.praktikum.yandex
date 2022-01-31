@@ -9,7 +9,8 @@ export default class Registration extends Block {
   constructor(props: Record<string, unknown>) {
     super('section', {
       ...props,
-      classNames: ['authorize']
+      classNames: ['authorize'],
+      modificator: 'authorize-block--registration'
     });
   }
 
