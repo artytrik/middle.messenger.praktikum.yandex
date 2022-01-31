@@ -1,11 +1,4 @@
-type Options = {
-  method?: string;
-  headers?: Record<string, string>;
-  data?: {
-    [key: string]: unknown
-  };
-  timeout?: number;
-};
+import {Options} from '../types';
 
 const METHOD = {
   GET: 'GET',
@@ -14,8 +7,8 @@ const METHOD = {
   DELETE: 'DELETE'
 };
 
-function queryStringify(data): string {
-  const str = Object.entries(data).reduce((acc, [key, value]) => {
+function queryStringify(data: Record<string, unknown>): string {
+  const str = Object.entries(data).reduce((acc: string[], [key, value]) => {
     acc.push(`${key}=${value}`);
     return acc;
   }, []).join('&');
@@ -44,7 +37,7 @@ export default class HTTPTransport {
       const xhr = new XMLHttpRequest();
       const isGet = method === METHOD.GET;
 
-      xhr.open(method, isGet && data ? `${url}${queryStringify(data)}` : url);
+      xhr.open(method ?? METHOD.GET, isGet && data ? `${url}${queryStringify(data)}` : url);
 
       xhr.onload = function() {
         resolve(xhr);

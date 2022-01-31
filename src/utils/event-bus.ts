@@ -1,4 +1,4 @@
-type Listener = <T>(...args: T[]) => void;
+import {Listener} from '../types';
 
 export default class EventBus {
   private listeners: Record<string, Listener[]>;

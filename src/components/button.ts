@@ -8,7 +8,9 @@ export default class Button extends Block {
   }
 
   render() {
-    this.element.setAttribute('href', this.props.href);
+    if (this.props.href) {
+      this.element.setAttribute('href', this.props.href);
+    }
 
     return compile(buttonTmpl, {})(this.props);
   }

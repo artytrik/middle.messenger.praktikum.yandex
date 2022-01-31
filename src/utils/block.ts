@@ -1,13 +1,6 @@
 import EventBus from './event-bus';
+import {Props} from '../types';
 
-type Props = {
-  [key: string]: unknown;
-  events?: {
-    [key: string]: (e: Event) => void;
-  }
-  classNames?: string[];
-  href?: string;
-}
 export default class Block {
   static EVENTS = {
     INIT: 'init',
