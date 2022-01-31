@@ -29,7 +29,8 @@ block content
           img(src="../img/cam.jpg", alt="Камера")
         p.chat__text-message.chat__message.chat__message--right Круто!
       .chat__input-block
-        input.chat__input(type="text", placeholder="Сообщение...")
+        label.visually-hidden(for="message") Поле для ввода
+        input.chat__input(name="message", id="message", type="text", placeholder="Сообщение...")
         button.chat__send-button.button(type="button")
          span.visually-hidden Отправить
          include ../img/button-arrow.svg
