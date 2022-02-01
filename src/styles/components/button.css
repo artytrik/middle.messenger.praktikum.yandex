@@ -7,7 +7,7 @@
   text-align: center;
   border: none;
   cursor: pointer;
-  line-height: 1rem;
+  font: inherit;
 }
 
 .button:hover {
