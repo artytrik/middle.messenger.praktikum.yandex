@@ -3,6 +3,8 @@ import renderDOM from '../../utils/render-dom';
 import {compile} from 'pug';
 import authorizeTmpl from '../../templates/authorize.tmpl';
 import InputBlock from '../../components/input-block';
+import Link from '../../components/link';
+import Form from '../../components/form';
 import Button from '../../components/button';
 
 export default class Login extends Block {
@@ -22,6 +24,13 @@ const login = new Login({
   header: 'Вход'
 });
 
+const loginForm = new Form({
+  wrappers: [
+    'authorize__input-wrapper',
+    'authorize__link-wrapper'
+  ]
+});
+
 const loginBlock = new InputBlock({
   labelName: 'Логин',
   inputType: 'text',
@@ -37,16 +46,17 @@ const passwordBlock = new InputBlock({
 const enterButton = new Button({
   classNames: ['authorize__button', 'button'],
   text: 'Войти',
-  href: './index.html'
+  type: 'submit'
 });
 
-const regButton = new Button({
+const regButton = new Link({
   classNames: ['authorize__link'],
   text: 'Регистрация',
   href: './registration.html'
 });
 
 renderDOM('.app', login);
+renderDOM('.authorize-block', loginForm);
 renderDOM('.authorize__input-wrapper', loginBlock);
 renderDOM('.authorize__input-wrapper', passwordBlock);
 renderDOM('.authorize__link-wrapper', enterButton);

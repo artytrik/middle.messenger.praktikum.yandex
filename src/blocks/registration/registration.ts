@@ -3,7 +3,7 @@ import renderDOM from '../../utils/render-dom';
 import {compile} from 'pug';
 import authorizeTmpl from '../../templates/authorize.tmpl';
 import InputBlock from '../../components/input-block';
-import Button from '../../components/button';
+import Link from '../../components/link';
 
 export default class Registration extends Block {
   constructor(props: Record<string, unknown>) {
@@ -65,13 +65,13 @@ const repeatPasswordBlock = new InputBlock({
   name: 'repeatPassword'
 });
 
-const regButton = new Button({
+const regButton = new Link({
   classNames: ['authorize__button', 'button'],
   text: 'Регистрация',
   href: './index.html'
 });
 
-const enterButton = new Button({
+const enterButton = new Link({
   classNames: ['authorize__link'],
   text: 'Войти',
   href: './login.html'
