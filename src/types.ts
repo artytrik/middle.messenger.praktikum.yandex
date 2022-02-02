@@ -15,4 +15,5 @@ export type Props = {
   classNames?: string[];
   href?: string;
   type?: string;
+  id?: string;
 };

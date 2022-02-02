@@ -31,7 +31,7 @@ const Validation = {
   },
   checkEmail(email: string): string {
     if (!PATTERN.EMAIL.test(email)) {
-      return 'Должен быть в корректном формате';
+      return 'Должна быть в корректном формате';
     }
     return '';
   },
@@ -43,7 +43,7 @@ const Validation = {
   },
   checkName(name: string): string {
     if (!PATTERN.NAME.test(name)) {
-      return 'Должен быть в корректном формате';
+      return 'Должно быть в корректном формате';
     }
     return '';
   },

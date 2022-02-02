@@ -58,6 +58,7 @@ const regButton = new Link({
 });
 
 const loginForm = new Form({
+  classNames: ['authorize__form'],
   wrappers: [
     'authorize__input-wrapper',
     'authorize__link-wrapper'

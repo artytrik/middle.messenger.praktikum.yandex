@@ -5,10 +5,7 @@ import formTmpl from '../templates/form.tmpl';
 
 export default class Form extends Block {
   constructor(props: Props) {
-    super('form', {
-      ...props,
-      classNames: ['authorize__form']
-    });
+    super('form', props);
   }
 
   render() {

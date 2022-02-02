@@ -6,5 +6,6 @@ export const INPUT_NAME = {
   LAST_NAME: 'last_name',
   PHONE: 'phone',
   REPEAT_PASSWORD: 'repeatPassword',
-  MESSAGE: 'message'
+  MESSAGE: 'message',
+  DISPLAY_NAME: 'display_name'
 };

@@ -1,28 +1,4 @@
-extends ../layouts/profile
+extends ../blocks/editProfile/editProfile
 
-block information
-  .information__wrapper-block
-    .information__picture-block.picture-block
-      img(src="../img/no-avatar.png", alt="Нет аватара")
-  .information__wrapper-block
-    form.additional-information__form
-      ul.additional-information
-        li.additional-information__item
-          label(for="email").additional-information__label Почта
-          input(type="email", class="additional-information__input", name="email", id="email", value="pochta@yandex.ru")
-        li.additional-information__item
-          label(for="login").additional-information__label Логин
-          input(type="text", class="additional-information__input", name="login", id="login", value="ivanivanov")
-        li.additional-information__item
-          label(for="firstName").additional-information__label Имя
-          input(type="text", class="additional-information__input", name="first_name", id="firstName", value="Иван")
-        li.additional-information__item
-          label(for="secondName").additional-information__label Фамилия
-          input(type="text", class="additional-information__input", name="second_name", id="secondName", value="Иванов")
-        li.additional-information__item
-          label(for="displayName").additional-information__label Имя в чате
-          input(type="text", class="additional-information__input", name="display_name", id="displayName", value="Иван")
-        li.additional-information__item
-          label(for="phone").additional-information__label Телефон
-          input(type="tel", class="additional-information__input", name="phone", id="phone", value="+7 (909) 967 30 30")
-      a(href="./viewProfile.pug").button.additional-information__button Сохранить
+block inner-information
+  .app

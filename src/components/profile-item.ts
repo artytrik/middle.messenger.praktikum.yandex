@@ -1,0 +1,17 @@
+import Block from '../utils/block';
+import {Props} from '../types';
+import profileItemTmpl from '../templates/profile-item.tmpl';
+import {compile} from 'pug';
+
+export default class ProfileItem extends Block {
+  constructor(props: Props) {
+    super('li', {
+      ...props,
+      classNames: ['additional-information__item']
+    });
+  }
+
+  render() {
+    return compile(profileItemTmpl, {})(this.props);
+  }
+}

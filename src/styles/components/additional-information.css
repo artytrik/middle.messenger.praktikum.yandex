@@ -15,6 +15,7 @@
 .additional-information__item {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding: 0.5rem 0;
   border-bottom: 1px solid var(--grey);
 }
@@ -51,4 +52,11 @@
 .additional-information__button {
   width: 70%;
   align-self: center;
+}
+
+.additional-information__error {
+  color: var(--error);
+  margin-top: 0.25rem;
+  font-size: 0.7rem;
+  width: 100%;
 }
