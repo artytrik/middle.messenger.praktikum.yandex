@@ -1,7 +1,7 @@
 import Block from '../utils/block';
 import {Props} from '../types';
 import {compile} from 'pug';
-import formTmpl from '../templates/form.tmpl';
+import wrapperTmpl from '../templates/wrapper.tmpl';
 
 export default class Form extends Block {
   constructor(props: Props) {
@@ -9,6 +9,6 @@ export default class Form extends Block {
   }
 
   render() {
-    return compile(formTmpl, {})(this.props);
+    return compile(wrapperTmpl, {})(this.props);
   }
 }
