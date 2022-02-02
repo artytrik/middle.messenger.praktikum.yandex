@@ -117,7 +117,7 @@ const profileForm = new Form({
               break;
             }
             case INPUT_NAME.DISPLAY_NAME: {
-              Event.onFormSubmit(value, key, Validation.checkName, lastNameItem, consoleObject);
+              Event.onFormSubmit(value, key, Validation.checkName, displayNameItem, consoleObject);
               break;
             }
             case INPUT_NAME.PHONE: {
