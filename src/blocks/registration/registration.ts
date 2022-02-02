@@ -31,37 +31,55 @@ const registration = new Registration({
 const mailBlock = new InputBlock({
   labelName: 'Почта',
   inputType: 'email',
-  name: 'email'
+  name: 'email',
+  events: {
+    'focusout': (e: Event) => Event.onInputFocusOut(e, Validation.checkEmail, mailBlock)
+  }
 });
 
 const loginBlock = new InputBlock({
   labelName: 'Логин',
   inputType: 'text',
-  name: 'login'
+  name: 'login',
+  events: {
+    'focusout': (e: Event) => Event.onInputFocusOut(e, Validation.checkLogin, loginBlock)
+  }
 });
 
 const firstNameBlock = new InputBlock({
   labelName: 'Имя',
   inputType: 'text',
-  name: 'first_name'
+  name: 'first_name',
+  events: {
+    'focusout': (e: Event) => Event.onInputFocusOut(e, Validation.checkName, firstNameBlock)
+  }
 });
 
 const lastNameBlock = new InputBlock({
   labelName: 'Фамилия',
   inputType: 'text',
-  name: 'last_name'
+  name: 'last_name',
+  events: {
+    'focusout': (e: Event) => Event.onInputFocusOut(e, Validation.checkName, lastNameBlock)
+  }
 });
 
 const telephoneBlock = new InputBlock({
   labelName: 'Телефон',
   inputType: 'tel',
-  name: 'phone'
+  name: 'phone',
+  events: {
+    'focusout': (e: Event) => Event.onInputFocusOut(e, Validation.checkPhone, telephoneBlock)
+  }
 });
 
 const passwordBlock = new InputBlock({
   labelName: 'Пароль',
   inputType: 'password',
-  name: 'password'
+  name: 'password',
+  events: {
+    'focusout': (e: Event) => Event.onInputFocusOut(e, Validation.checkPassword, passwordBlock)
+  }
 });
 
 const regButton = new Button({
