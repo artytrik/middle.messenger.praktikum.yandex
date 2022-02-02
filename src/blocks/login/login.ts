@@ -8,6 +8,7 @@ import Form from '../../components/form';
 import Button from '../../components/button';
 import Validation from '../../utils/validation';
 import {INPUT_NAME} from '../../const';
+import Event from '../../utils/event';
 
 export default class Login extends Block {
   constructor(props: Record<string, unknown>) {
@@ -31,15 +32,7 @@ const loginBlock = new InputBlock({
   inputType: 'text',
   name: 'login',
   events: {
-    'focusout': (e: Event) => {
-      const target = e.target as HTMLInputElement;
-      const error = Validation.checkLogin(target.value);
-
-      loginBlock.setProps({
-        error,
-        value: target.value
-      });
-    }
+    'focusout': (e: Event) => Event.onInputFocusOut(e, Validation.checkLogin, loginBlock)
   }
 });
 
@@ -48,15 +41,7 @@ const passwordBlock = new InputBlock({
   inputType: 'password',
   name: 'password',
   events: {
-    'focusout': (e: Event) => {
-      const target = e.target as HTMLInputElement;
-      const error = Validation.checkPassword(target.value);
-
-      passwordBlock.setProps({
-        error,
-        value: target.value
-      });
-    }
+    'focusout': (e: Event) => Event.onInputFocusOut(e, Validation.checkPassword, passwordBlock)
   }
 });
 
@@ -87,31 +72,11 @@ const loginForm = new Form({
 
       formData.forEach((value: string, key) => {
         switch (key) {
-          case INPUT_NAME.LOGIN: {
-            const error = Validation.checkLogin(value);
-
-            loginBlock.setProps({
-              error,
-              value
-            });
-
-            if (!error) {
-              consoleObject[key] = value;
-            }
+          case INPUT_NAME.LOGIN:
+            Event.onFormSubmit(value, key, Validation.checkLogin, loginBlock, consoleObject);
             break;
-          }
           case INPUT_NAME.PASSWORD: {
-            const error = Validation.checkPassword(value);
-
-            passwordBlock.setProps({
-              error: Validation.checkPassword(value),
-              value
-            });
-
-            if (!error) {
-              consoleObject[key] = value;
-            }
-
+            Event.onFormSubmit(value, key, Validation.checkPassword, passwordBlock, consoleObject);
             break;
           }
         }
