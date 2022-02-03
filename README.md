@@ -1,5 +1,7 @@
 # yandex-chat
 
+Ссылка на pull request 2 спринта: https://github.com/artytrik/middle.messenger.praktikum.yandex/pull/2
+
 Pet-проект чата на основе программы по обучению миддл-фронтэнд разработчика от Яндекса.
 
 ## Разработка
