@@ -1,10 +1,9 @@
 import Block from '../utils/block';
-import {Props} from '../types';
 import profileItemTmpl from '../templates/profile-item.tmpl';
 import {compile} from 'pug';
 
 export default class ProfileItem extends Block {
-  constructor(props: Props) {
+  constructor(props: Record<string, unknown>) {
     super('li', {
       ...props,
       classNames: ['additional-information__item']

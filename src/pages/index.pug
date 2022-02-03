@@ -1,36 +1,4 @@
-extends ../layouts/page
+extends ../blocks/index/index
 
-block content
-  section.chat-window
-    h2.visually-hidden Основное окно чата
-    .chat-window__sidebar.sidebar
-      .sidebar__top-block
-        a(href="./viewProfile.pug").sidebar__link Профиль
-          include ../img/arrow.svg
-      .sidebar__bottom-block
-        ul.chat-list
-          li.chat-list__item
-            .chat-list__picture-block.picture-block
-              img(src="../img/no-avatar.png", alt="Нет аватара")
-            .chat-list__content-block
-              h3.chat-list__header Андрей
-              p.chat-list__message Изображение
-            .chat-list__info-block
-              span.chat-list__info 10:49
-              span.chat-list__info Пт
-    .chat-window__chat.chat
-      .chat__header-block
-        .chat__picture-block.picture-block
-          img(src="../img/no-avatar.png", alt="Нет аватара")
-        h3.chat__header Вадим
-      .chat__content-block
-        p.chat__text-message.chat__message.chat__message--left Привет! Смотри
-        .chat__picture-message.chat__message.chat__message
-          img(src="../img/cam.jpg", alt="Камера")
-        p.chat__text-message.chat__message.chat__message--right Круто!
-      .chat__input-block
-        label.visually-hidden(for="message") Поле для ввода
-        input.chat__input(name="message", id="message", type="text", placeholder="Сообщение...")
-        button.chat__send-button.button(type="button")
-         span.visually-hidden Отправить
-         include ../img/button-arrow.svg
+block chat
+  .app

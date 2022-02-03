@@ -16,4 +16,5 @@ export type Props = {
   href?: string;
   type?: string;
   id?: string;
+  modificator?: string;
 };
