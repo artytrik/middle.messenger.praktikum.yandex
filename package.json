@@ -31,8 +31,5 @@
     "clear": "rimraf dist .parcel-cache"
   },
   "author": "Artem Trikashnyi",
-  "license": "ISC",
-  "engines": {
-    "node": ">16.0.0"
-  }
+  "license": "ISC"
 }
