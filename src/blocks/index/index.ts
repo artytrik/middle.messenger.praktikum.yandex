@@ -57,13 +57,38 @@ const rightMessage = new ChatMessage({
   text: 'Круто!'
 });
 
-const chatForm = new ChatForm({
-  classNames: ['chat__input-block']
-});
-
 const chatInput = new ChatInput({});
 
 const chatButton = new ChatButton({});
+
+const chatForm = new ChatForm({
+  classNames: ['chat__input-block'],
+  events: {
+    'submit': (e: Event) => {
+      e.preventDefault();
+
+      const target = e.target as HTMLFormElement;
+      const formData = new FormData(target);
+      const consoleObject: Record<string, string> = {};
+
+      formData.forEach((value: string, key) => {
+        const error = !value;
+
+        chatInput.setProps({
+          error,
+          value
+        });
+
+        if (!error) {
+          consoleObject[key] = value;
+        }
+      });
+
+      // eslint-disable-next-line no-console
+      console.log(consoleObject);
+    }
+  }
+});
 
 renderDOM('.app', chatWindow);
 renderDOM('.chat-window', sidebar);
