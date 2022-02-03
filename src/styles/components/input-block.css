@@ -20,3 +20,9 @@
 .input-block:hover .input-block__label {
   color: var(--hover-grey);
 }
+
+.input-block__error {
+  color: var(--error);
+  margin-top: 0.25rem;
+  font-size: 0.7rem;
+}

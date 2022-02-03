@@ -1,6 +1,7 @@
 @import './global.css';
 @import './fonts.css';
 @import './variables.css';
+@import './components/picture-block';
 @import './components/page.css';
 @import './components/button.css';
 @import './components/chat.css';
@@ -13,3 +14,4 @@
 @import './components/information.css';
 @import './components/additional-information.css';
 @import './components/error.css';
+@import './components/chat-list.css';
