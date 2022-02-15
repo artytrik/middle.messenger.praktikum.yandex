@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Pet-project чата",
   "dependencies": {
+    "buffer": "^6.0.3",
     "express": "^4.17.2",
     "parcel": "^2.2.1",
     "pug": "^3.0.2",
