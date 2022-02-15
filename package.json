@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Pet-project чата",
   "dependencies": {
-    "buffer": "^6.0.3",
     "express": "^4.17.2",
     "parcel": "^2.2.1",
     "pug": "^3.0.2",
@@ -25,7 +24,7 @@
     "dev": "npm run clear && parcel ./src/pages/*.pug",
     "express": "node ./src/server.js",
     "build": "npm run clear && parcel build ./src/pages/*.pug",
-    "start": "npm run build && npm run express",
+    "start": "npm install && npm run build && npm run express",
     "stylelint": "stylelint \"src/styles/**/*.css\"",
     "eslint": "eslint --ext .js --ext .ts src/",
     "test": "npm run stylelint && npm run eslint",
