@@ -1,7 +1,5 @@
 # yandex-chat
 
-Ссылка на pull request 2 спринта: https://github.com/artytrik/middle.messenger.praktikum.yandex/pull/2
-
 Pet-проект чата на основе программы по обучению миддл-фронтэнд разработчика от Яндекса.
 
 ## Разработка
@@ -9,6 +7,11 @@ Pet-проект чата на основе программы по обучен
 1. Клонируйте локально: `git clone git@github.com:artytrik/yandex-chat.git`
 2. Установите зависимости: `npm install`
 3. Запустите локальный сервер с вотчером: `npm run dev`
+
+## Тестирование
+
+В проекте используется ESLint и StyleLint.  
+Для запуска тестов: `npm run test`
 
 ## Сборка и деплой
 

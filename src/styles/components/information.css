@@ -10,9 +10,7 @@
   align-items: center;
 }
 
-.information__picture-block {
+.information__picture-block.picture-block {
   width: 130px;
   height: 130px;
-  border-radius: 50%;
-  overflow: hidden;
 }

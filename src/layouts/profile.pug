@@ -1,10 +1,11 @@
-extends ../layouts/main
+extends ../layouts/page
 
-block primary
+block content
   section.profile
     h2.visually-hidden Профиль
     aside.profile__aside
       a(href="./index.pug").button.profile__button
         include ../img/big-arrow.svg
     .profile__main-block
-      block information
+      .profile__information.information
+        block information
